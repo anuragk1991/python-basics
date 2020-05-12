@@ -44,5 +44,3 @@ print(sentence)
 
 newStr = f"{user['name']} is a Software Developer of age: {user['age']}"
 print(f"{user['name']} is a Software Developer of age: {user['age']}")
-
-print('new')
