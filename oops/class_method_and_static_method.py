@@ -13,9 +13,17 @@ class Employee:
 		#we are using Employee class variable(prof_tax) here not object variable
 		return self.salary/12 - Employee.prof_tax
 
+	def __str__(self):
+		return 'Employee(First:{}, Last:{}, Salary:{})'.format(self.first, self.last, self.salary)
+
 	@classmethod
 	def set_prof_tax(cls, amt):
 		cls.prof_tax = amt
+
+	@classmethod
+	def fromString(cls, emp_str):
+		first, last, salary = emp_str.split('-')
+		return cls(first, last, salary)
 
 	@staticmethod
 	def is_workday(day):
@@ -43,6 +51,13 @@ print(date)
 
 print('check whether its work day')
 print(Employee.is_workday(date))
+
+
+emp_str = 'Rahul-Kumar-500000'
+print('')
+print('Create employee object from string seperated by delimiter \'-\'')
+e2 = Employee.fromString(emp_str)
+print(e2)
 
 print('')
 print(e1.__dict__)
