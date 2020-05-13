@@ -11,6 +11,9 @@ class Employee:
 		#we are using Employee class variable(prof_tax) here not object variable
 		return self.salary/12 - Employee.prof_tax
 
+	def updateproftax(self, amt):
+		Employee.prof_tax += amt
+
 
 e1 = Employee('anurag', 'kumar', 1200000)
 e2 = Employee('amit', 'kumar', 900000)
@@ -21,6 +24,7 @@ print(e2.__dict__)
 print(Employee.__dict__)
 
 e1.prof_tax = 500
+e1.updateproftax(e1.prof_tax)
 
 print(e1.monthlysalary())
 print(e2.monthlysalary())
